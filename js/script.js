@@ -158,10 +158,16 @@ function IA()
 {
 
     if ( !TabuleiroCompleto() ) {
-    
+        
         if (jogador == jogadorIA) {
 
-            let action = MelhorAcao(tabuleiro, jogador);
+            let action;
+
+            if (tabuleiro[0][1] == jogadorIA && tabuleiro[1][1] == jogadorIA && tabuleiro[2][1] == '') { // Corrige falha do algoritmo
+                action = [2, 1];
+            } else {            
+                action = MelhorAcao(tabuleiro, jogador);
+            }
 
             if(action) {
 
@@ -173,6 +179,7 @@ function IA()
                 jogador = jogador == 'X' ? 'O' : 'X';
 
             }
+
         }
 
     }
