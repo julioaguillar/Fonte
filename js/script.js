@@ -148,7 +148,10 @@ function AtualizarPlacar(jogador_vencedor)
 
 function ZerarPlacar() 
 {
-    AtualizarPlacar('zerar');
+
+    let zerar_placar = confirm('Deseja zerar o placar?');
+    if (zerar_placar) AtualizarPlacar('zerar');
+
 }
 
 function IA()
